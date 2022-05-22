@@ -1,0 +1,71 @@
+import Lab3
+
+print("Test_Lab3")
+
+
+def test_bubble_sort_ascending():
+    result = []
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 8, 9, 3]
+    test_arr = [3, 8, 9, 11, 12, 22, 25, 34, 64, 90]
+
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+
+    assert (result == test_arr)
+
+
+def test_bubble_sort_descending():
+    result = []
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 8, 9, 3]
+    test_arr = [90, 64, 34, 25, 22, 12, 11, 9, 8, 3]
+
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+
+    assert (result == test_arr)
+
+
+def test_req_01():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 1, 2, 4]
+    test_arr = [90, 64, 34, 25, 22, 12, 11, 4, 2, 1]
+
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+
+    assert (result == test_arr)
+
+
+def test_req_02():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 1, 2, 5, 7]
+    result = 1
+    result1 = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+
+    assert (result == result1)
+
+
+def test_req_03():
+    input_arr = [64, 34, 25, 12, 22, 11, 90]
+    result = 2
+    result1 = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+
+    assert (result == result1)
+
+
+def test_req_04():
+    input_arr = []
+    result = 0
+    result1 = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+    assert (result == result1)
+
+
+def test_req_05():
+    input_arr = [5.3, 7]
+    result = 3
+    result1 = Lab3.bubble_sort(input_arr, Lab3.SORT_DESCENDING)
+
+    assert (result == result1)
+
+
+def test_bubble_sort_invalid():
+    result = []
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 8, 9, 3]
+    result = Lab3.bubble_sort(input_arr, 3)
+
+    assert (result == 2)
